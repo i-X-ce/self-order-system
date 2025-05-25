@@ -2,6 +2,7 @@ import styles from "./style.module.css";
 import type { MenuType } from "../../../utils/menu";
 import MenuItem from "../MenuItem";
 import type { ColorType } from "../../../utils/colorType";
+import MenuTitle from "../MenuTitle";
 
 const MenuSection = ({
   title,
@@ -19,13 +20,11 @@ const MenuSection = ({
       className={styles.section}
       style={{ backgroundColor: `var(--color-${color})` }}
     >
-      <div className={styles.top}>
-        <h1>{title}</h1>
-        <h2>{subTitle}</h2>
-      </div>
+      <MenuTitle title={title} subTitle={subTitle} />
+
       <div className={styles.itemContainer}>
-        {menuItems?.map((menu) => (
-          <MenuItem key={menu.id} menu={menu} />
+        {menuItems?.map((menu, i) => (
+          <MenuItem key={menu.id} menu={menu} delay={i * 0.1} />
         ))}
       </div>
     </section>

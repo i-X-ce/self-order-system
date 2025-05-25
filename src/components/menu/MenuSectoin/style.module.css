@@ -1,8 +1,9 @@
 .section {
   min-height: 100vh;
+  padding: 0 100px;
 }
 
 .itemContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }

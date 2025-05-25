@@ -1,23 +1,92 @@
 import styles from "./style.module.css";
 import type { MenuType } from "../../../utils/menu";
+import { motion } from "motion/react";
+import { useState } from "react";
+import CommonButton from "../../common/CommonButton";
 
-const MenuItem = ({ menu }: { menu: MenuType }) => {
+const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
+  const [open, setOpen] = useState(false);
+  const imgId = `img_${menu.id}`;
+
   return (
-    <button className={styles.container}>
-      <div
-        className={styles.img}
+    <motion.button
+      className={styles.container}
+      onClick={() => {
+        setOpen(true);
+      }}
+      whileHover="hover"
+      initial={{ top: "300px", opacity: 0 }}
+      animate={{ top: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 10, delay }}
+    >
+      <motion.div
+        className={`${styles.img} ${styles.menuImg}`}
         style={{ backgroundImage: `url(${menu.img})` }}
+        layoutId={imgId}
+        variants={{
+          hover: {
+            scale: 1.05,
+            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.2)",
+          },
+        }}
       />
       <div className={styles.texts}>
+        <p className={styles.nameEn}>{menu.id?.replace("_", " ")}</p>
         <p className={styles.name}>{menu.name}</p>
         {/* <div className={styles.divider} /> */}
-        <p className={styles.nameEn}>{menu.id}</p>
         <p className={styles.price}>
           {menu.price}
           <span style={{ fontSize: "0.8rem" }}>円</span>
         </p>
       </div>
-    </button>
+
+      {/* ポップアップ */}
+      {open && (
+        <motion.div
+          className={styles.backDrop}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpen(false);
+          }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+        >
+          <div
+            className={styles.backDropContent}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <motion.div
+              className={`${styles.img} ${styles.backDropImg}`}
+              style={{ backgroundImage: `url(${menu.img})` }}
+              layoutId={imgId}
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 100, damping: 10 }}
+            />
+
+            <div className={styles.backDropLeftContainer}>
+              {/* テキスト */}
+              <div className={styles.backDropTexts}>
+                <p className={styles.backDropName}>{menu.name}</p>
+                <div className={styles.backDropSubName}>
+                  {menu.id?.replace("_", " ")}
+                </div>
+                <p className={styles.backDropDescription}>{menu.description}</p>
+                <p className={styles.backDropPrice}>
+                  {menu.price}
+                  <span style={{ fontSize: "1.2rem" }}>円</span>
+                </p>
+              </div>
+
+              {/* UI */}
+              <div className={styles.backDropToolContainer}>
+                <CommonButton title="注文" subTitle="order" color="enhanced" />
+              </div>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </motion.button>
   );
 };
 
