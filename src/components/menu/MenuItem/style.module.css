@@ -8,7 +8,7 @@
   display: flex;
   justify-content: end;
   height: var(--size);
-  padding: 15px;
+  /* padding: 15px; */
   margin: 20px;
   color: var(--color-text);
 
@@ -26,6 +26,7 @@
 .menuImg {
   position: absolute;
   left: 0;
+  bottom: 0;
   z-index: 2;
 }
 
@@ -36,7 +37,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: center;
 }
 
 .name {

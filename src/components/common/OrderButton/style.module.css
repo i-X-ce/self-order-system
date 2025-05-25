@@ -1,0 +1,53 @@
+.button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+.bgCircle {
+  --size: 300px;
+  position: absolute;
+  background-color: var(--color-text);
+  color: var(--color-background);
+  width: var(--size);
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  right: calc(var(--size) / -2);
+  bottom: calc(var(--size) / -2);
+  box-shadow: var(--shdow-regular);
+  opacity: 0.9;
+}
+
+.texts {
+  position: relative;
+  color: var(--color-background);
+}
+
+.title {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.subTitle {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.textsContainer {
+  display: flex;
+  align-items: center;
+  margin: 30px 10px;
+}
+
+.count {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  aspect-ratio: 1/1;
+  background-color: var(--color-enhanced);
+  border-radius: 500px;
+  right: 0;
+  top: 25px;
+}

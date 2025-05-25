@@ -4,10 +4,12 @@ import { motion } from "motion/react";
 import { useState } from "react";
 import CommonButton from "../../common/CommonButton";
 import OptionUI from "../../common/OptionUI";
+import { useOrder } from "../../common/OrderProvider";
 
 const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
   const [open, setOpen] = useState(false);
   const imgId = `img_${menu.id}`;
+  const { orders, setOrders } = useOrder();
 
   return (
     <motion.button
@@ -86,7 +88,18 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
                     <OptionUI key={option} type={option} />
                   ))}
                 </div>
-                <CommonButton title="注文" subTitle="order" color="enhanced" />
+                <CommonButton
+                  title="注文"
+                  subTitle="order"
+                  color="enhanced"
+                  onClick={() => {
+                    setOrders((prev) => {
+                      prev.push(menu.id as string);
+                      return [...prev];
+                    });
+                    setOpen(false);
+                  }}
+                />
               </div>
             </div>
           </div>

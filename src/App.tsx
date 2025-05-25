@@ -1,4 +1,5 @@
 import "./App.css";
+import OrderButton from "./components/common/OrderButton";
 import { usePage } from "./components/common/PageProvider";
 import MenuPage from "./pages/menu";
 import TopPage from "./pages/top";
@@ -18,6 +19,7 @@ function App() {
       >
         {page === "home" && <TopPage />}
         {page === "menu" && <MenuPage />}
+        <OrderButton />
       </div>
     </>
   );
