@@ -93,7 +93,6 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-
 }
 
 .backDropTexts {
@@ -129,4 +128,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.backDropOptions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
 }

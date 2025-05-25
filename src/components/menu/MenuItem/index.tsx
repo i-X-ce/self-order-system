@@ -3,6 +3,7 @@ import type { MenuType } from "../../../utils/menu";
 import { motion } from "motion/react";
 import { useState } from "react";
 import CommonButton from "../../common/CommonButton";
+import OptionUI from "../../common/OptionUI";
 
 const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
   const [open, setOpen] = useState(false);
@@ -80,6 +81,11 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
 
               {/* UI */}
               <div className={styles.backDropToolContainer}>
+                <div className={styles.backDropOptions}>
+                  {menu.options?.map((option) => (
+                    <OptionUI key={option} type={option} />
+                  ))}
+                </div>
                 <CommonButton title="注文" subTitle="order" color="enhanced" />
               </div>
             </div>
