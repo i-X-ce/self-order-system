@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./style.module.css";
 import type { OptionType } from "../../../utils/menu";
 import CommonRadioButton from "../CommonRadioButton";
+import CommonSlider from "../CommonSlider";
 
 const OptionUI = ({ type }: { type: OptionType }) => {
   const options: {
@@ -9,7 +10,7 @@ const OptionUI = ({ type }: { type: OptionType }) => {
   } = {
     cream: {
       name: "クリーム",
-      tool: <CommonRadioButton options={["なし", "あり"]} />,
+      tool: <CommonSlider />,
     },
     size: {
       name: "サイズ",
@@ -17,15 +18,15 @@ const OptionUI = ({ type }: { type: OptionType }) => {
     },
     milk: {
       name: "ミルク",
-      tool: <CommonRadioButton options={["なし", "あり"]} />,
+      tool: <CommonSlider />,
     },
     sugar: {
       name: "砂糖",
       tool: <CommonRadioButton options={["なし", "あり"]} />,
     },
     sweetener: {
-      name: "甘味料",
-      tool: <CommonRadioButton options={["なし", "あり"]} />,
+      name: "甘さ",
+      tool: <CommonSlider />,
     },
     temperature: {
       name: "温度",

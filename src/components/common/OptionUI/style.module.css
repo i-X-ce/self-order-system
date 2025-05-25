@@ -1,6 +1,7 @@
 .optionContainer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--color-section);
   padding: 10px;
   border-radius: 10px;
