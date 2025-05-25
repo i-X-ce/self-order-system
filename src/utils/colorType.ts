@@ -6,4 +6,7 @@ export type ColorType =
   | "enhanced"
   | "background"
   | "section"
-  | "card";
+  | "card"
+  | "error"
+  | "window"
+  | "wintext";

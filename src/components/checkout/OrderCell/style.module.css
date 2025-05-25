@@ -1,0 +1,29 @@
+.tr {
+  border-bottom: 1px solid var(--color-text);
+}
+
+.tr td {
+  padding: 10px 0;
+}
+
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.img {
+  height: 80px;
+}
+
+.nameContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.nameEn {
+  opacity: 0.5;
+}
+.name {
+  font-size: 1.2rem;
+}

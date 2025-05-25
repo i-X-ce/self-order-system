@@ -1,10 +1,10 @@
 import styles from "./style.module.css";
-import type { MenuType } from "../../../utils/menu";
+import type { MenuID, MenuType } from "../../../utils/menu";
 import { motion } from "motion/react";
 import { useState } from "react";
 import CommonButton from "../../common/CommonButton";
 import OptionUI from "../../common/OptionUI";
-import { useOrder } from "../../common/OrderProvider";
+import { useOrder, type OrderType } from "../../common/OrderProvider";
 
 const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
   const [open, setOpen] = useState(false);
@@ -94,8 +94,11 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
                   color="enhanced"
                   onClick={() => {
                     setOrders((prev) => {
-                      prev.push(menu.id as string);
-                      return [...prev];
+                      const newOrder: OrderType = {
+                        id: menu.id as MenuID,
+                        count: 1,
+                      };
+                      return [...prev, newOrder];
                     });
                     setOpen(false);
                   }}

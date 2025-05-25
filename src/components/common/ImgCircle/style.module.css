@@ -1,0 +1,5 @@
+.imgCircle {
+  aspect-ratio: 1/1;
+  background-size: cover;
+  border-radius: 100%;
+}

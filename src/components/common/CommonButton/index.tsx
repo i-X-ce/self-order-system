@@ -11,7 +11,7 @@ const CommonButton = ({
   onClick,
 }: {
   title: string;
-  subTitle: string;
+  subTitle?: string;
   color?: ColorType;
   textColor?: ColorType;
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
@@ -29,7 +29,7 @@ const CommonButton = ({
       transition={{ type: "spring", stiffness: 100, damping: 10 }}
     >
       <p className={styles.title}>{title}</p>
-      <p className={styles.subTitle}>-{subTitle}-</p>
+      {subTitle && <p className={styles.subTitle}>-{subTitle}-</p>}
     </motion.button>
   );
 };
