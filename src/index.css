@@ -1,0 +1,25 @@
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Kiwi Maru", serif;
+
+}
+
+:root {
+  --color-window: rgba(0, 0, 0, 0.7); /* 小窓用 */
+  --color-wintext: #FFFFFF; /* 小窓テキスト用 */
+
+  --color-main: #BED28C;
+  --color-accent: #FFB7C5;
+  --color-sub: #F5F0E1;
+  --color-text : #50321E;
+  --color-enhanced: #DCB446;
+  --color-background: #F5F0E1;
+  --color-section : #E8EDD9;
+  --color-card: #FFFFFF;
+
+  --shadow-regular: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+

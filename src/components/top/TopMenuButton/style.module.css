@@ -1,0 +1,53 @@
+.button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    position: relative;
+    width: 200px;
+    border-radius: 100%;
+    box-shadow: var(--shadow-regular);
+    overflow: hidden;
+}
+
+.menuImg {
+    --margin: 10%;
+    width: calc(100% - var(--margin) * 2);
+    aspect-ratio: 1/1;
+    background-size: cover;
+    margin: var(--margin);
+    border-radius: 100%;
+}
+
+.button:hover .texts, button:focus .texts {
+    bottom: 0;
+}
+
+.texts {
+    --height: 40%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: calc(-1 * var(--height));
+    width: 100%;
+    height: var(--height);
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-window);
+    color: var(--color-wintext);
+    font-weight: unset;
+    padding: 0.5rem 5%;
+    padding-top: 0;
+    transition: bottom 0.3s;
+}
+
+.title, .subTitle {
+    font-weight: unset;
+}
+
+.title {
+    font-size: 1.4rem;
+}
+

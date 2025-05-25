@@ -1,0 +1,12 @@
+.button {
+  background: none;
+  border: none;
+  padding: 20px;
+  margin: 0;
+
+  flex: 1;
+}
+
+.title {
+  font-size: 1.5rem;
+}

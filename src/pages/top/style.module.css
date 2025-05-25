@@ -1,0 +1,32 @@
+.summerContainer {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-left: 50px;
+    user-select: none;
+}
+
+.summerBack {
+    --size: 1000px;
+    position: absolute;
+    background-color: rgb(51, 190, 233);
+    height: var(--size);
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+    box-shadow: var(--shadow-regular);
+}
+
+.summer {
+    font-size: 7rem;
+    z-index: 2;
+    cursor: default;
+}
+
+.summerEn {
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
