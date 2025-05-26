@@ -1,9 +1,25 @@
 .button {
-  padding: 20px;
   border-radius: 10px;
   box-shadow: var(--shadow-regular);
 }
 
-.title {
+.large {
+  padding: 20px;
+}
+.large .title {
   font-size: 1.5rem;
+}
+
+.midium {
+  padding: 10px;
+}
+.medium .title {
+  font-size: 1.2rem;
+}
+
+.small {
+  padding: 5px;
+}
+.small .title {
+  font-size: 1rem;
 }

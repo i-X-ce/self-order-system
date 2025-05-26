@@ -5,7 +5,15 @@ import CommonButton from "../../common/CommonButton";
 import { motion } from "motion/react";
 import ImgCircle from "../../common/ImgCircle";
 
-const OrderCell = ({ data, index }: { data: OrderType; index: number }) => {
+const OrderCell = ({
+  data,
+  index,
+  delay = 0,
+}: {
+  data: OrderType;
+  index: number;
+  delay?: number;
+}) => {
   const menu = MenuRecord[data.menuID];
   const { orders: _, setOrders } = useOrder();
 
@@ -14,9 +22,11 @@ const OrderCell = ({ data, index }: { data: OrderType; index: number }) => {
       layout
       className={styles.tr}
       whileHover="hover"
-      initial={{ opacity: 0, x: -20 }}
+      // initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 20 }}
+      exit={{ opacity: 0, x: 40 }}
+      // transition={{ delay: delay }}
+      variants={{ hover: { x: 10 } }}
     >
       <td className={styles.nameCell}>
         <ImgCircle src={menu.img as string} className={styles.img} />

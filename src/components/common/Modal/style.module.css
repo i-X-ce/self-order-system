@@ -1,0 +1,5 @@
+.container {
+  background-color: var(--color-card);
+  border-radius: 20px;
+  box-shadow: var(--shdow-regular);
+}

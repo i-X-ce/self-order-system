@@ -46,3 +46,29 @@ table th {
 .bottomContainer {
   display: flex;
 }
+
+.modalContent {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.modalButtonContainer {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+}
+
+.modalTitle {
+  font-weight: unset;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.modalButton {
+  padding: 10px 20px;
+  width: 50%;
+}

@@ -10,6 +10,7 @@ const CommonButton = ({
   textColor = "card",
   className,
   flexExpand = false,
+  size = "large",
   onClick,
 }: {
   title: string;
@@ -18,11 +19,19 @@ const CommonButton = ({
   textColor?: ColorType;
   className?: string;
   flexExpand?: boolean;
+  size?: "small" | "medium" | "large";
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 }) => {
+  const sizeStyles = {
+    small: styles.small,
+    medium: styles.medium,
+    large: styles.large,
+  };
+  const sizeStyle = sizeStyles[size];
+
   return (
     <motion.button
-      className={`${styles.button} ${className || ""}`}
+      className={` ${styles.button} ${sizeStyle} ${className || ""}`}
       style={{
         backgroundColor: `var(--color-${color})`,
         color: `var(--color-${textColor})`,
@@ -31,7 +40,7 @@ const CommonButton = ({
       onClick={onClick}
       whileTap={{ y: 10 }}
       whileHover={{ scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 100, damping: 10 }}
+      transition={{ type: "spring", stiffness: 1000, damping: 30 }}
     >
       <p className={styles.title}>{title}</p>
       {subTitle && <p className={styles.subTitle}>-{subTitle}-</p>}
