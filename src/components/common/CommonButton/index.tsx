@@ -8,20 +8,25 @@ const CommonButton = ({
   subTitle,
   color = "text",
   textColor = "card",
+  className,
+  flexExpand = false,
   onClick,
 }: {
   title: string;
   subTitle?: string;
   color?: ColorType;
   textColor?: ColorType;
+  className?: string;
+  flexExpand?: boolean;
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 }) => {
   return (
     <motion.button
-      className={styles.button}
+      className={`${styles.button} ${className || ""}`}
       style={{
         backgroundColor: `var(--color-${color})`,
         color: `var(--color-${textColor})`,
+        flex: flexExpand ? "1" : "auto",
       }}
       onClick={onClick}
       whileTap={{ y: 10 }}

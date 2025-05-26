@@ -1,7 +1,7 @@
 import React, { createContext, useContext, type ReactNode } from "react";
 import type { MenuID } from "../../../utils/menu";
 
-export type OrderType = { id: MenuID; count: number };
+export type OrderType = { id: number; menuID: MenuID; count: number };
 
 type OrderContextType = {
   orders: OrderType[];

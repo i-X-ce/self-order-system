@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 import type { MenuID, MenuType } from "../../../utils/menu";
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import CommonButton from "../../common/CommonButton";
 import OptionUI from "../../common/OptionUI";
@@ -44,70 +44,76 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
       </div>
 
       {/* ポップアップ */}
-      {open && (
-        <motion.div
-          className={styles.backDrop}
-          onClick={(e) => {
-            e.stopPropagation();
-            setOpen(false);
-          }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          <div
-            className={styles.backDropContent}
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className={styles.backDrop}
+            onClick={(e) => {
+              e.stopPropagation();
+              setOpen(false);
+            }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <motion.div
-              className={`${styles.img} ${styles.backDropImg}`}
-              style={{ backgroundImage: `url(${menu.img})` }}
-              layoutId={imgId}
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ type: "spring", stiffness: 100, damping: 10 }}
-            />
+            <div
+              className={styles.backDropContent}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <motion.div
+                className={`${styles.img} ${styles.backDropImg}`}
+                style={{ backgroundImage: `url(${menu.img})` }}
+                layoutId={imgId}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 100, damping: 10 }}
+              />
 
-            <div className={styles.backDropLeftContainer}>
-              {/* テキスト */}
-              <div className={styles.backDropTexts}>
-                <p className={styles.backDropName}>{menu.name}</p>
-                <div className={styles.backDropSubName}>
-                  {menu.id?.replace("_", " ")}
+              <div className={styles.backDropLeftContainer}>
+                {/* テキスト */}
+                <div className={styles.backDropTexts}>
+                  <p className={styles.backDropName}>{menu.name}</p>
+                  <div className={styles.backDropSubName}>
+                    {menu.id?.replace("_", " ")}
+                  </div>
+                  <p className={styles.backDropDescription}>
+                    {menu.description}
+                  </p>
+                  <p className={styles.backDropPrice}>
+                    {menu.price}
+                    <span style={{ fontSize: "1.2rem" }}>円</span>
+                  </p>
                 </div>
-                <p className={styles.backDropDescription}>{menu.description}</p>
-                <p className={styles.backDropPrice}>
-                  {menu.price}
-                  <span style={{ fontSize: "1.2rem" }}>円</span>
-                </p>
-              </div>
 
-              {/* UI */}
-              <div className={styles.backDropToolContainer}>
-                <div className={styles.backDropOptions}>
-                  {menu.options?.map((option) => (
-                    <OptionUI key={option} type={option} />
-                  ))}
+                {/* UI */}
+                <div className={styles.backDropToolContainer}>
+                  <div className={styles.backDropOptions}>
+                    {menu.options?.map((option) => (
+                      <OptionUI key={option} type={option} />
+                    ))}
+                  </div>
+                  <CommonButton
+                    title="注文"
+                    subTitle="order"
+                    color="enhanced"
+                    onClick={() => {
+                      setOrders((prev) => {
+                        const newOrder: OrderType = {
+                          id: Math.random(),
+                          menuID: menu.id as MenuID,
+                          count: 1,
+                        };
+                        return [...prev, newOrder];
+                      });
+                      setOpen(false);
+                    }}
+                  />
                 </div>
-                <CommonButton
-                  title="注文"
-                  subTitle="order"
-                  color="enhanced"
-                  onClick={() => {
-                    setOrders((prev) => {
-                      const newOrder: OrderType = {
-                        id: menu.id as MenuID,
-                        count: 1,
-                      };
-                      return [...prev, newOrder];
-                    });
-                    setOpen(false);
-                  }}
-                />
               </div>
             </div>
-          </div>
-        </motion.div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.button>
   );
 };
