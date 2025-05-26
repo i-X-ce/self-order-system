@@ -1,3 +1,4 @@
+import { AnimatePresence } from "motion/react";
 import "./App.css";
 import OrderButton from "./components/common/OrderButton";
 import { usePage } from "./components/common/PageProvider";
@@ -18,9 +19,11 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        {page === "home" && <TopPage />}
-        {page === "menu" && <MenuPage />}
-        {page === "checkout" && <CheckoutPage />}
+        <AnimatePresence mode="wait">
+          {page === "home" && <TopPage key="home" />}
+          {page === "menu" && <MenuPage key="menu" />}
+          {page === "checkout" && <CheckoutPage key="checkout" />}
+        </AnimatePresence>
         <OrderButton />
       </div>
     </>

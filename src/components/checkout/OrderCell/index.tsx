@@ -43,9 +43,9 @@ const OrderCell = ({
       <td className={styles.buttonCell}>
         <motion.div
           className={styles.buttonContainer}
-          initial={{ opacity: 0, x: 20 }}
+          initial={{ opacity: 0 }}
           variants={{
-            hover: { opacity: 1, x: 0 },
+            hover: { opacity: 1 },
           }}
         >
           <CommonButton

@@ -20,7 +20,12 @@ const CheckoutPage = () => {
   }, 0);
 
   return (
-    <section className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0, y: 200 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 200 }}
+    >
       <div className={styles.topContainer}>
         <div className={styles.titleContainer}>
           <MenuTitle
@@ -66,19 +71,20 @@ const CheckoutPage = () => {
             </AnimatePresence>
           </motion.table>
         </AnimatePresence>
+      </div>
+
+      <div className={styles.bottomContainer}>
         <p style={{ fontSize: "3rem", marginTop: "1rem", textAlign: "right" }}>
           <span style={{ fontSize: "2rem" }}>合計金額: </span>
           {totalPrice}
           <span style={{ fontSize: "1.5rem" }}> 円</span>
         </p>
-      </div>
-
-      <div className={styles.bottomContainer}>
         <CommonButton
           title="ご注文を確定"
           subTitle="place order"
           color="enhanced"
           flexExpand
+          disabled={orders.length === 0}
           onClick={() => {
             setOpenModal(true);
           }}
@@ -160,7 +166,7 @@ const CheckoutPage = () => {
           </div>
         </div>
       </Modal>
-    </section>
+    </motion.div>
   );
 };
 

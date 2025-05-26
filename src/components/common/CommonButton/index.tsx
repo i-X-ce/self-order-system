@@ -10,6 +10,7 @@ const CommonButton = ({
   textColor = "card",
   className,
   flexExpand = false,
+  disabled = false,
   size = "large",
   onClick,
 }: {
@@ -19,6 +20,7 @@ const CommonButton = ({
   textColor?: ColorType;
   className?: string;
   flexExpand?: boolean;
+  disabled?: boolean;
   size?: "small" | "medium" | "large";
   onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
 }) => {
@@ -28,18 +30,29 @@ const CommonButton = ({
     large: styles.large,
   };
   const sizeStyle = sizeStyles[size];
+  const baseColor = disabled
+    ? "var(--color-disabled)"
+    : `var(--color-${color})`;
+  const baseTextColor = disabled
+    ? "var(--color-card)"
+    : `var(--color-${textColor})`;
+  const whileTap = disabled ? undefined : { y: 10 };
+  const whileHoverScale = disabled ? undefined : { scale: 1.05 };
 
   return (
     <motion.button
       className={` ${styles.button} ${sizeStyle} ${className || ""}`}
       style={{
-        backgroundColor: `var(--color-${color})`,
-        color: `var(--color-${textColor})`,
+        backgroundColor: baseColor,
+        color: baseTextColor,
         flex: flexExpand ? "1" : "auto",
       }}
-      onClick={onClick}
-      whileTap={{ y: 10 }}
-      whileHover={{ scale: 1.05 }}
+      onClick={(e) => {
+        if (disabled) return;
+        onClick?.(e);
+      }}
+      whileTap={whileTap}
+      whileHover={whileHoverScale}
       transition={{ type: "spring", stiffness: 1000, damping: 30 }}
     >
       <p className={styles.title}>{title}</p>

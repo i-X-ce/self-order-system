@@ -12,7 +12,11 @@ const TopPage = () => {
   };
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 200 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 200 }}
+    >
       {/* 季節のメニュー */}
       <TopSection
         title="Seosonal Menu"
@@ -108,7 +112,7 @@ const TopPage = () => {
           delay={delaySec()}
         />
       </TopSection>
-    </div>
+    </motion.div>
   );
 };
 

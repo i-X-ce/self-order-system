@@ -17,6 +17,7 @@ button {
   --color-window: rgba(0, 0, 0, 0.7); /* 小窓用 */
   --color-wintext: #ffffff; /* 小窓テキスト用 */
   --color-error: #f27979;
+  --color-disabled: #929292;
 
   --color-main: #bed28c;
   --color-accent: #ffb7c5;

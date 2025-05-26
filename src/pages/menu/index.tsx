@@ -3,10 +3,15 @@ import styles from "./style.module.css";
 import MenuNavigation from "../../components/menu/MenuNavigation";
 import MenuSection from "../../components/menu/MenuSectoin";
 import { CategoryMenu } from "../../utils/menu";
+import { motion } from "motion/react";
 
 const MenuPage = () => {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, y: 200 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 200 }}
+    >
       <MenuNavigation />
       <MenuSection
         title={"コーヒー"}
@@ -24,7 +29,7 @@ const MenuPage = () => {
         subTitle={"sweets"}
         menuItems={CategoryMenu("sweets")}
       />
-    </div>
+    </motion.div>
   );
 };
 
