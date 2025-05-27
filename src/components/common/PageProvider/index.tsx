@@ -6,7 +6,7 @@ import React, {
   type SetStateAction,
 } from "react";
 
-type PageType = "home" | "menu" | "checkout";
+export type PageType = "home" | "menu" | "checkout";
 const PageContext = createContext<{
   page: PageType;
   setPage: Dispatch<SetStateAction<PageType>>;

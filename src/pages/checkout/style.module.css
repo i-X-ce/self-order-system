@@ -4,6 +4,7 @@
   padding: 20px 200px;
   min-height: 100vh;
   justify-content: space-between;
+  background-color: var(--color-background);
 }
 
 .topContainer {

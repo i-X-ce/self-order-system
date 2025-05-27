@@ -97,6 +97,8 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
                     subTitle="order"
                     color="enhanced"
                     onClick={() => {
+                      setOpen(false);
+                      if (!open) return;
                       setOrders((prev) => {
                         const newOrder: OrderType = {
                           id: Math.random(),
@@ -105,7 +107,6 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
                         };
                         return [...prev, newOrder];
                       });
-                      setOpen(false);
                     }}
                   />
                 </div>

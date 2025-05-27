@@ -5,6 +5,7 @@ import { usePage } from "./components/common/PageProvider";
 import CheckoutPage from "./pages/checkout";
 import MenuPage from "./pages/menu";
 import TopPage from "./pages/top";
+import NavBar from "./components/common/NavBar";
 
 function App() {
   const pageContext = usePage();
@@ -19,12 +20,15 @@ function App() {
           minHeight: "100vh",
         }}
       >
-        <AnimatePresence mode="wait">
-          {page === "home" && <TopPage key="home" />}
-          {page === "menu" && <MenuPage key="menu" />}
-          {page === "checkout" && <CheckoutPage key="checkout" />}
-        </AnimatePresence>
-        <OrderButton />
+        <NavBar />
+        <div style={{ position: "relative", top: 66.82 }}>
+          <AnimatePresence mode="wait">
+            {page === "home" && <TopPage key="home" />}
+            {page === "menu" && <MenuPage key="menu" />}
+            {page === "checkout" && <CheckoutPage key="checkout" />}
+          </AnimatePresence>
+          <OrderButton />
+        </div>
       </div>
     </>
   );

@@ -1,0 +1,47 @@
+.navBar {
+  height: 66px;
+  position: fixed;
+  width: 100%;
+  padding: 10px 50px;
+  box-shadow: var(--shadow-regular);
+  background-color: var(--color-section);
+  /* border-bottom: 1px solid var(--color-border); */
+  display: flex;
+  justify-content: center;
+  z-index: 20000;
+}
+
+.navBarInner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.backButton {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  left: 20px;
+  text-align: start;
+  gap: 10px;
+}
+
+.backIcon {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.logo {
+  width: 50px;
+}
+
+.name {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.nameEn {
+  font-size: 0.8rem;
+  opacity: 0.5;
+}
