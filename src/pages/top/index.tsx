@@ -22,6 +22,7 @@ const TopPage = () => {
         title="Seosonal Menu"
         subTitle="季節のメニュー"
         description="季節のお飲み物、スイーツをご用意しております。春夏秋冬、四季折々の味をお楽しみください。"
+        subMenuID="seasonal"
       >
         <motion.div
           className={styles.summerBack}
@@ -69,6 +70,7 @@ const TopPage = () => {
         subTitle="セットメニュー"
         description="お飲み物一品とスイーツ一品をセットで楽しめます。単品で頼むよりも100円お安くなっております。"
         color="section"
+        subMenuID="set"
       >
         <TopMenuButton
           menuID={"cappuccino"}
@@ -90,6 +92,7 @@ const TopPage = () => {
         title="À la carte"
         subTitle="単品メニュー"
         description="単品メニューは、ドリンクとスイーツをそれぞれお選びいただけます。どれも自信作ですので、ぜひお試しください。"
+        subMenuID="alacarte"
       >
         <TopMenuButton
           menuID={"flat_white"}
