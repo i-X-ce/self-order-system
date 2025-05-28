@@ -3,6 +3,7 @@
   border: none;
   padding: 20px;
   margin: 0;
+  position: relative;
 
   flex: 1;
   color: var(--color-text);
@@ -10,4 +11,33 @@
 
 .title {
   font-size: 1.5rem;
+}
+
+.subMenuLinks {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: var(--shadow-regular);
+  border-radius: 10px;
+}
+
+.subMenuLink {
+  list-style: none;
+  text-align: start;
+  font-size: large;
+  padding-top: 5px;
+  border-top: 1px solid var(--color-border);
+}
+
+.linkTitle {
+  line-height: 1;
+}
+
+.linkSubTitle {
+  font-size: 0.8rem;
+  opacity: 0.8;
 }

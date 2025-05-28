@@ -9,7 +9,7 @@ import { useOrder, type OrderType } from "../../common/OrderProvider";
 const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
   const [open, setOpen] = useState(false);
   const imgId = `img_${menu.id}`;
-  const { orders, setOrders } = useOrder();
+  const { orders: _, setOrders } = useOrder();
 
   return (
     <motion.button
@@ -22,17 +22,19 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
       animate={{ top: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 10, delay }}
     >
-      <motion.div
-        className={`${styles.img} ${styles.menuImg}`}
-        style={{ backgroundImage: `url(${menu.img})` }}
-        layoutId={imgId}
-        variants={{
-          hover: {
-            scale: 1.05,
-            boxShadow: "0px 4px 20px rgba(0, 0, 0, 0.2)",
-          },
-        }}
-      />
+      <div className={styles.imgContainer}>
+        <motion.div
+          className={`${styles.img} ${styles.menuImg}`}
+          style={{ backgroundImage: `url(${menu.img})` }}
+          layoutId={imgId}
+          variants={{
+            hover: {
+              scale: 1.1,
+              rotate: 10,
+            },
+          }}
+        />
+      </div>
       <div className={styles.texts}>
         <p className={styles.nameEn}>{menu.id?.replace("_", " ")}</p>
         <p className={styles.name}>{menu.name}</p>
@@ -66,7 +68,7 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
                 layoutId={imgId}
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
-                transition={{ type: "spring", stiffness: 100, damping: 10 }}
+                transition={{ type: "spring", stiffness: 100, damping: 15 }}
               />
 
               <div className={styles.backDropLeftContainer}>

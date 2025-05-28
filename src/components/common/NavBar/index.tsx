@@ -42,7 +42,6 @@ const NavBar = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             whileHover={{ x: -10 }}
-            transition={{ delay: 0.5 }}
           >
             <p className={styles.backIcon}>{"<"}</p>
             <div>

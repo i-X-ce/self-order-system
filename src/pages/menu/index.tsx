@@ -1,11 +1,21 @@
-import React from "react";
-import styles from "./style.module.css";
+import { type ReactNode } from "react";
+// import styles from "./style.module.css";
 import MenuNavigation from "../../components/menu/MenuNavigation";
-import MenuSection from "../../components/menu/MenuSectoin";
-import { CategoryMenu } from "../../utils/menu";
 import { motion } from "motion/react";
+import {
+  useSubMenu,
+  type SubMenuType,
+} from "../../components/common/SubMenuProvider";
+import AlacarteMenuContent from "../../components/menu/AlacarteMenuContent";
 
 const MenuPage = () => {
+  const { subMenu, setSubMenu: _ } = useSubMenu();
+  const pageContent: Record<SubMenuType, ReactNode> = {
+    seasonal: undefined,
+    set: undefined,
+    alacarte: <AlacarteMenuContent />,
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 200 }}
@@ -13,22 +23,7 @@ const MenuPage = () => {
       exit={{ opacity: 0, y: 200 }}
     >
       <MenuNavigation />
-      <MenuSection
-        title={"コーヒー"}
-        subTitle={"coffee"}
-        menuItems={CategoryMenu("coffee")}
-      />
-      <MenuSection
-        title={"お茶"}
-        subTitle={"tea"}
-        menuItems={CategoryMenu("tea")}
-        color="section"
-      />
-      <MenuSection
-        title={"スイーツ"}
-        subTitle={"sweets"}
-        menuItems={CategoryMenu("sweets")}
-      />
+      {pageContent[subMenu]}
     </motion.div>
   );
 };

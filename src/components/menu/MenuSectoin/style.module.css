@@ -4,6 +4,13 @@
 }
 
 .itemContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  margin: 20px 0;
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
 }
