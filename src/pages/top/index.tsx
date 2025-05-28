@@ -2,6 +2,7 @@ import styles from "./style.module.css";
 import TopSection from "../../components/top/TopSection";
 import TopMenuButton from "../../components/top/TopMenuButton";
 import { motion } from "motion/react";
+import Cloud from "../../components/menu/Cloud";
 
 const TopPage = () => {
   let delay = 0;
@@ -35,6 +36,8 @@ const TopPage = () => {
             delay: 0.3,
           }}
         />
+        <Cloud right={-30} top={100} size={80} delay={0.8} />
+        <Cloud right={450} top={1} size={20} delay={0.7} />
         <motion.div
           className={styles.summerContainer}
           initial={{ scale: 0.5, opacity: 0 }}

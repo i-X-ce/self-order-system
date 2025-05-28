@@ -8,6 +8,7 @@ const Cloud = ({
   bottom = 0,
   zindex = 0,
   size = 50,
+  delay = 0,
 }: {
   left?: number;
   right?: number;
@@ -15,6 +16,7 @@ const Cloud = ({
   bottom?: number;
   zindex?: number;
   size?: number;
+  delay?: number;
 }) => {
   return (
     <div
@@ -29,12 +31,12 @@ const Cloud = ({
     >
       <div className={styles.cloudRow}>
         {Array.from({ length: 2 }).map((_, index) => (
-          <CloudPart key={index + 3} size={size} />
+          <CloudPart key={index + 3} size={size} delay={delay} />
         ))}
       </div>
       <div className={styles.cloudRow}>
         {Array.from({ length: 3 }).map((_, index) => (
-          <CloudPart key={index} size={size} />
+          <CloudPart key={index} size={size} delay={delay} />
         ))}
       </div>
     </div>
@@ -43,7 +45,7 @@ const Cloud = ({
 
 export default Cloud;
 
-function CloudPart({ size }: { size: number }) {
+function CloudPart({ size, delay }: { size: number; delay: number }) {
   return (
     <motion.div
       className={styles.cloudPart}
@@ -54,7 +56,7 @@ function CloudPart({ size }: { size: number }) {
         type: "spring",
         stiffness: 500,
         damping: 20,
-        delay: Math.random() * 0.3,
+        delay: Math.random() * 0.2 + delay,
       }}
     />
   );
