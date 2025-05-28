@@ -7,13 +7,14 @@ import {
   type SubMenuType,
 } from "../../components/common/SubMenuProvider";
 import AlacarteMenuContent from "../../components/menu/AlacarteMenuContent";
+import SeasonalMenuContent from "../../components/menu/SeasonalMenuContent";
 
 const MenuPage = () => {
   const { subMenu, setSubMenu: _ } = useSubMenu();
   const pageContent: Record<SubMenuType, ReactNode> = {
-    seasonal: undefined,
+    seasonal: <SeasonalMenuContent key={"seasonal"} />,
     set: undefined,
-    alacarte: <AlacarteMenuContent />,
+    alacarte: <AlacarteMenuContent key={"alacarte"} />,
   };
 
   return (

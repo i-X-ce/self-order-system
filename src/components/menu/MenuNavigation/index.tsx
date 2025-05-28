@@ -9,12 +9,12 @@ const subMenuLinksRecord: Record<SubMenuType, SubMenuLinkType[]> = {
     {
       title: "季節のお飲み物",
       subTitle: "seasonal drinks",
-      id: "seosonal-drinks",
+      id: "seasonal drinks",
     },
     {
       title: "季節のスイーツ",
       subTitle: "seasonal sweets",
-      id: "seosonal-sweets",
+      id: "seasonal sweets",
     },
   ],
   set: [
@@ -52,7 +52,7 @@ const MenuNavigation = () => {
           title="季節"
           subTitle="seasonal"
           color="main"
-          subMenuID="set"
+          subMenuID="seasonal"
           subMenuLinks={subMenuLinksRecord.seasonal}
         />
         <MenuNavBigButton

@@ -45,6 +45,7 @@ const MenuSection = ({
               {row.slice(0, 4).map((menu, j) => (
                 <MenuItem
                   key={menu.id}
+                  nameKey={`${subTitle}_${menu.id}`}
                   menu={menu}
                   delay={(i * 0.1 + j * 0.05) % 1} // Adjust delay for each item
                 />
@@ -55,6 +56,7 @@ const MenuSection = ({
               {row.slice(4, 7).map((menu, j) => (
                 <MenuItem
                   key={menu.id}
+                  nameKey={`${subTitle}_${menu.id}`}
                   menu={menu}
                   delay={(i * 0.1 + (j + 3) * 0.05) % 1} // Adjust delay for each item
                 />

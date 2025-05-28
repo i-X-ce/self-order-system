@@ -113,6 +113,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 420,
     category: "coffee",
     options: coffeeOptions,
+    isSeasonal: true,
   },
   caramel_macchiato: {
     name: "カフェモカ",
@@ -144,6 +145,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 480,
     category: "coffee",
     options: [...coffeeOptions, "sweetener"],
+    isSeasonal: true,
   },
   irish_coffee: {
     name: "アイリッシュコーヒー",
@@ -226,6 +228,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 400,
     category: "tea",
     options: teaOptions,
+    isSeasonal: true,
   },
   straight_tea: {
     name: "ストレートティー",
@@ -250,6 +253,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 390,
     category: "tea",
     options: teaOptions,
+    isSeasonal: true,
   },
   genmaicha: {
     name: "玄米茶",
@@ -258,6 +262,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 390,
     category: "tea",
     options: teaOptions,
+    isSeasonal: true,
   },
   matcha_latte: {
     name: "抹茶ラテ",
@@ -274,6 +279,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 550,
     category: "tea",
     options: ["temperature", "size"],
+    isSeasonal: true,
   },
 
   // スイーツ
@@ -292,6 +298,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 350,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
   sakura_mochi: {
     name: "桜餅",
@@ -300,6 +307,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 330,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
   hot_choco_parfait: {
     name: "ホットチョコパフェ",
@@ -308,6 +316,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 580,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
   hotcakes: {
     name: "ホットケーキ",
@@ -372,6 +381,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 450,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
   fruit_parfait: {
     name: "フルーツパフェ",
@@ -388,6 +398,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 480,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
   dorayaki_burger: {
     name: "どら焼きバーガー",
@@ -420,6 +431,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 490,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
   ohagi: {
     name: "おはぎ",
@@ -436,6 +448,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     price: 350,
     category: "sweets",
     options: sweetsOptions,
+    isSeasonal: true,
   },
 };
 
@@ -454,6 +467,10 @@ export const MenuList = getMenuFilter(() => true);
 // カテゴリーごとのメニューを取得する
 export function CategoryMenu(category: CategoryType): MenuType[] {
   return getMenuFilter((menu) => menu.category === category);
+}
+
+export function getSeasonalMenu(): MenuType[] {
+  return getMenuFilter((menu) => menu.isSeasonal === true);
 }
 
 // フィルターを使ってメニューを取得する

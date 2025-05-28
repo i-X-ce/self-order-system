@@ -6,10 +6,23 @@ import CommonButton from "../../common/CommonButton";
 import OptionUI from "../../common/OptionUI";
 import { useOrder, type OrderType } from "../../common/OrderProvider";
 
-const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
+const MenuItem = ({
+  menu,
+  delay,
+  nonText = false,
+  nameKey,
+}: {
+  menu: MenuType;
+  delay?: number;
+  nonText?: boolean;
+  nameKey?: string | number;
+}) => {
   const [open, setOpen] = useState(false);
-  const imgId = `img_${menu.id}`;
+  // const imgId = `img_${menu.id}`;
   const { orders: _, setOrders } = useOrder();
+  const getLayoutID = () => {
+    return `${nameKey}_${menu.id}`;
+  };
 
   return (
     <motion.button
@@ -22,11 +35,18 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
       animate={{ top: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 10, delay }}
     >
-      <div className={styles.imgContainer}>
+      <div
+        className={styles.imgContainer}
+        style={{
+          border: nonText ? "none" : "",
+        }}
+      >
         <motion.div
           className={`${styles.img} ${styles.menuImg}`}
-          style={{ backgroundImage: `url(${menu.img})` }}
-          layoutId={imgId}
+          style={{
+            backgroundImage: `url(${menu.img})`,
+          }}
+          layoutId={getLayoutID()}
           variants={{
             hover: {
               scale: 1.1,
@@ -35,15 +55,17 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
           }}
         />
       </div>
-      <div className={styles.texts}>
-        <p className={styles.nameEn}>{menu.id?.replace("_", " ")}</p>
-        <p className={styles.name}>{menu.name}</p>
-        {/* <div className={styles.divider} /> */}
-        <p className={styles.price}>
-          {menu.price}
-          <span style={{ fontSize: "0.8rem" }}>円</span>
-        </p>
-      </div>
+      {!nonText && (
+        <div className={styles.texts}>
+          <p className={styles.nameEn}>{menu.id?.replace("_", " ")}</p>
+          <p className={styles.name}>{menu.name}</p>
+          {/* <div className={styles.divider} /> */}
+          <p className={styles.price}>
+            {menu.price}
+            <span style={{ fontSize: "0.8rem" }}>円</span>
+          </p>
+        </div>
+      )}
 
       {/* ポップアップ */}
       <AnimatePresence>
@@ -65,7 +87,7 @@ const MenuItem = ({ menu, delay }: { menu: MenuType; delay?: number }) => {
               <motion.div
                 className={`${styles.img} ${styles.backDropImg}`}
                 style={{ backgroundImage: `url(${menu.img})` }}
-                layoutId={imgId}
+                layoutId={getLayoutID()}
                 initial={{ scale: 0.8 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 100, damping: 15 }}

@@ -1,0 +1,62 @@
+.topSection {
+  min-height: 90vh;
+  background-color: var(--color-summer);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  gap: 100px;
+  padding: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.topTextContainer {
+  color: var(--color-summer);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+}
+
+.topLeftContainer,
+.topRightContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.topLeftContainer > :nth-child(2) {
+  right: 130px;
+}
+
+.topRightContainer > :nth-child(2) {
+  left: 130px;
+}
+
+.summer {
+  font-size: 12rem;
+  z-index: 2;
+  cursor: default;
+  line-height: 1.2;
+}
+
+.summerEn {
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
+.description {
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.textBackGround {
+  position: absolute;
+  background-color: white;
+  height: 60%;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  box-shadow: var(--shadow-regular);
+}

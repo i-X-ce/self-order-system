@@ -1,0 +1,17 @@
+.container {
+  position: absolute;
+  bottom: 0;
+}
+
+.cloudRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: -20px;
+}
+
+.cloudPart {
+  background-color: white;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+}
