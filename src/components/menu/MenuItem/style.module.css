@@ -77,10 +77,10 @@
   font-size: 1.1rem;
 }
 
-.name,
+/* .name,
 .nameEn {
-  /* padding-right: 20px; */
-}
+  padding-right: 20px;
+} */
 
 .backDrop {
   position: fixed;

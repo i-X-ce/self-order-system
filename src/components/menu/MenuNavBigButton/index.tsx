@@ -23,7 +23,7 @@ const MenuNavBigButton = ({
     <motion.button
       onClick={() => {
         setSubMenu(subMenuID);
-        window.scrollTo({ top: 0 });
+        window.scrollTo({ top: 0, behavior: "instant" });
       }}
       className={styles.button}
       style={{ backgroundColor: `var(--color-${color})` }}

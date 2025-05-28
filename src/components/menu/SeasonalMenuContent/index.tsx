@@ -116,6 +116,7 @@ const SeasonalMenuContent = () => {
         title="季節の飲み物"
         subTitle="seasonal drinks"
         menuItems={seasonalDrinks}
+        color="section"
       />
       <MenuSection
         title="季節のスイーツ"

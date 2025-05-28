@@ -21,9 +21,9 @@ const subMenuLinksRecord: Record<SubMenuType, SubMenuLinkType[]> = {
     {
       title: "コーヒーセット",
       subTitle: "coffee set",
-      id: "coffee-set",
+      id: "coffee set",
     },
-    { title: "お茶セット", subTitle: "tea set", id: "tea-set" },
+    { title: "お茶セット", subTitle: "tea set", id: "tea set" },
   ],
   alacarte: [
     {

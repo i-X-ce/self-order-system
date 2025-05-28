@@ -1,0 +1,93 @@
+.topSection {
+  display: flex;
+  min-height: 80vh;
+  padding: 100px 300px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.topImgContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  gap: 50px;
+}
+
+.topImg {
+  width: 200px;
+}
+
+.topTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.topSubTitle {
+  font-size: 1.2rem;
+}
+
+.topTitle {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+.topDescription {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
+.imgContainer {
+  width: 100px;
+}
+
+.setMenuSection {
+  display: flex;
+  padding: 50px 200px;
+  position: relative;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  --img-size: 500px;
+  gap: 100px;
+  min-height: 45vh;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.sectionSubTitle {
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.sectionBorder {
+  opacity: 0.5;
+  border-top: 1px solid;
+  margin: 10px;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.sectionDescription {
+  font-size: 1.1rem;
+}
+
+.sectionImg {
+  position: absolute;
+  width: var(--img-size);
+  box-shadow: var(--shadow-regular);
+  border-radius: 100%;
+}
+
+.imgSpace {
+  width: calc(var(--img-size) * 2.5);
+}

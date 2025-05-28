@@ -469,6 +469,7 @@ export function CategoryMenu(category: CategoryType): MenuType[] {
   return getMenuFilter((menu) => menu.category === category);
 }
 
+// 季節限定メニューを取得する
 export function getSeasonalMenu(): MenuType[] {
   return getMenuFilter((menu) => menu.isSeasonal === true);
 }
