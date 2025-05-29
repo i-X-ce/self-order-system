@@ -10,7 +10,7 @@ import { usePage } from "../../components/common/PageProvider";
 import { MenuRecord } from "../../utils/menu";
 
 const CheckoutPage = () => {
-  const { page, setPage } = usePage();
+  const { page: _, setPage } = usePage();
   const { orders, setOrders } = useOrder();
   const [openModal, setOpenModal] = React.useState(false);
   const [openSuccessModal, setOpenSuccessModal] = React.useState(false);

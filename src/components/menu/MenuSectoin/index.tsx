@@ -47,7 +47,7 @@ const MenuSection = ({
                   key={menu.id}
                   nameKey={`${subTitle}_${menu.id}`}
                   menu={menu}
-                  delay={(i * 0.1 + j * 0.05) % 1} // Adjust delay for each item
+                  delay={(j * 0.05) % 1} // Adjust delay for each item
                 />
               ))}
             </div>
@@ -58,7 +58,7 @@ const MenuSection = ({
                   key={menu.id}
                   nameKey={`${subTitle}_${menu.id}`}
                   menu={menu}
-                  delay={(i * 0.1 + (j + 3) * 0.05) % 1} // Adjust delay for each item
+                  delay={((j + 3) * 0.05) % 1} // Adjust delay for each item
                 />
               ))}
               <div />

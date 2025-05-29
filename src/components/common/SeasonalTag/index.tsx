@@ -14,7 +14,7 @@ const SeasonalTag = ({
     <motion.div
       className={`${styles.container} ${className || ""}`}
       initial={{ opacity: 0, scale: scale * 0.1, rotate: -90 }}
-      animate={{ opacity: 1, scale: scale, rotate: 0 }}
+      animate={{ opacity: 1, scale: scale, rotate: 10 }}
       transition={{ type: "spring", stiffness: 200, damping: 10, delay: delay }}
     >
       <div className={styles.border} />
