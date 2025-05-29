@@ -21,7 +21,7 @@ const CheckinPage = () => {
       <div className={styles.topWrapper}>
         <div className={styles.topContainer}>
           <img
-            src="/public/img/icon/LytoRetoRogo.svg"
+            src="/img/icon/LytoRetoRogo.svg"
             alt=""
             className={styles.rogo}
           />
@@ -40,11 +40,12 @@ const CheckinPage = () => {
           </div>
         </div>
         <div className={styles.counterContainer}>
-          <p>人数を入力してください。</p>
+          {/* <p>人数を入力してください。</p> */}
           <NumberCounter
             value={value}
             onChange={(_, v) => setValue(v)}
             unit="名"
+            dark
           />
         </div>
       </div>
