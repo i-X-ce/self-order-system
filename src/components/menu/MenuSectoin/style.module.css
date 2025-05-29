@@ -1,6 +1,7 @@
 .section {
   min-height: 100vh;
   padding: 0 100px;
+  overflow: hidden;
 }
 
 .itemContainer {

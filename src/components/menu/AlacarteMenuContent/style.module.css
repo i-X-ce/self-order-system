@@ -1,0 +1,50 @@
+.topSection {
+  min-height: 90vh;
+  background-color: var(--color-background);
+  display: flex;
+  padding: 50px 100px;
+  gap: 100px;
+  justify-content: center;
+}
+
+.topContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 23vw;
+}
+
+.topTextContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.topTitle {
+  font-size: 2rem;
+}
+
+.topSubTitle {
+  font-size: 0.8rem;
+  background-color: var(--color-text);
+  color: var(--color-section);
+  /* line-height: 1; */
+  border-radius: 500px;
+  padding: 0 10px;
+}
+
+.topImgBG {
+  position: absolute;
+  width: 500px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  opacity: 0.5;
+}
+
+.topImgContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
