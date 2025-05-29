@@ -5,6 +5,7 @@ import { useState } from "react";
 import CommonButton from "../../common/CommonButton";
 import OptionUI from "../../common/OptionUI";
 import { useOrder, type OrderType } from "../../common/OrderProvider";
+import NumberCounter from "../../common/NumberCounter";
 
 const MenuItem = ({
   menu,
@@ -23,6 +24,7 @@ const MenuItem = ({
   const getLayoutID = () => {
     return `${nameKey}_${menu.id}`;
   };
+  const [value, setValue] = useState(1);
 
   return (
     <motion.button
@@ -113,6 +115,10 @@ const MenuItem = ({
 
                 {/* UI */}
                 <div className={styles.backDropToolContainer}>
+                  <NumberCounter
+                    value={value}
+                    onChange={(value) => setValue(value)}
+                  />
                   <div className={styles.backDropOptions}>
                     {menu.options?.map((option) => (
                       <OptionUI key={option} type={option} />
@@ -129,7 +135,7 @@ const MenuItem = ({
                         const newOrder: OrderType = {
                           id: Math.random(),
                           menuID: menu.id as MenuID,
-                          count: 1,
+                          count: value,
                         };
                         return [...prev, newOrder];
                       });
