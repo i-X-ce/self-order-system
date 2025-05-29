@@ -36,7 +36,7 @@ const CheckinPage = () => {
               </span>
               へ。
             </p>
-            <p className={styles.subTitle}>Welcom to Cafe LytoReto.</p>
+            <p className={styles.subTitle}>Welcome to Cafe LytoReto.</p>
           </div>
         </div>
         <div className={styles.counterContainer}>
