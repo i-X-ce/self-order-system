@@ -6,10 +6,11 @@ import CommonButton from "../../common/CommonButton";
 import OptionUI from "../../common/OptionUI";
 import { useOrder, type OrderType } from "../../common/OrderProvider";
 import NumberCounter from "../../common/NumberCounter";
+import SeasonalTag from "../../common/SeasonalTag";
 
 const MenuItem = ({
   menu,
-  delay,
+  delay = 0,
   nonText = false,
   nameKey,
 }: {
@@ -39,6 +40,13 @@ const MenuItem = ({
       viewport={{ once: true, amount: 0.1 }}
       transition={{ type: "spring", stiffness: 100, damping: 10, delay }}
     >
+      {!nonText && menu.isSeasonal && (
+        <SeasonalTag
+          className={styles.seasonalTag}
+          scale={0.5}
+          delay={delay + 0.2}
+        />
+      )}
       <div
         className={styles.imgContainer}
         style={{

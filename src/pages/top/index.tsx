@@ -3,6 +3,7 @@ import TopSection from "../../components/top/TopSection";
 import TopMenuButton from "../../components/top/TopMenuButton";
 import { motion } from "motion/react";
 import Cloud from "../../components/menu/Cloud";
+import SeasonalTag from "../../components/common/SeasonalTag";
 
 const TopPage = () => {
   let delay = 0;
@@ -52,6 +53,7 @@ const TopPage = () => {
           <p className={styles.summer}>夏</p>
           <p className={styles.summerEn}>Summer</p>
         </motion.div>
+        <SeasonalTag className={styles.seasonalTag} scale={0.8} />
         <TopMenuButton
           menuID={"lemon_tea"}
           title="季節の飲み物"

@@ -4,6 +4,7 @@ import Cloud from "../Cloud";
 import MenuItem from "../MenuItem";
 import styles from "./style.module.css";
 import MenuSection from "../MenuSectoin";
+import SeasonalTag from "../../common/SeasonalTag";
 
 const seasonalDrinks = getSeasonalMenu().filter(
   (menu) => menu.category === "tea" || menu.category === "coffee"
@@ -90,6 +91,7 @@ const SeasonalMenuContent = () => {
               delay: 0.3,
             }}
           />
+          <SeasonalTag className={styles.seasonalTag} delay={1} />
         </div>
         <div className={styles.topRightContainer}>
           <MenuItem

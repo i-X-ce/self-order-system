@@ -19,6 +19,7 @@
   justify-content: center;
   text-align: center;
   width: 20%;
+  position: relative;
 }
 
 .topLeftContainer,
@@ -55,8 +56,14 @@
 .textBackGround {
   position: absolute;
   background-color: white;
-  height: 60%;
+  height: 140%;
   aspect-ratio: 1/1;
   border-radius: 100%;
   box-shadow: var(--shadow-regular);
+}
+
+.seasonalTag {
+  position: absolute;
+  top: -20%;
+  right: -20%;
 }

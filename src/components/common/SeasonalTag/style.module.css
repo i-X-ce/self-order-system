@@ -1,0 +1,29 @@
+.container {
+  width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
+  background-color: var(--color-enhanced);
+  color: var(--color-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.border {
+  position: absolute;
+  border: 5px double var(--color-card);
+  width: 85%;
+  height: 85%;
+  border-radius: 100%;
+}
+
+.textContainer {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.en {
+  font-size: 0.7rem;
+}
