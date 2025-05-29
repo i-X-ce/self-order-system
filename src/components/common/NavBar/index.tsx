@@ -24,6 +24,11 @@ const NavBar = () => {
       name: "メニューへ戻る",
       nameEn: "go to Menu",
     },
+    checkin: {
+      page: null,
+      name: "",
+      nameEn: "",
+    },
   };
   const backArg = backArgs[page];
 

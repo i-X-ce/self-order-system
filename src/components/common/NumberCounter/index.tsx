@@ -2,21 +2,32 @@ import styles from "./style.module.css";
 import { motion } from "motion/react";
 
 const NumberCounter = ({
-  value = 0,
+  value = 1,
+  unit = "",
   onChange,
 }: {
   value?: number;
-  onChange?: (value: number) => void;
+  unit?: string;
+  onChange?: (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    value: number
+  ) => void;
 }) => {
-  const handleNowValueChange = (add: number) => {
-    onChange?.(Math.min(Math.max(value + add, 1), 99));
+  const handleNowValueChange = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    add: number
+  ) => {
+    e.stopPropagation();
+    onChange?.(e, Math.min(Math.max(value + add, 1), 99));
   };
 
   return (
     <div className={styles.container}>
-      <Button onClick={() => handleNowValueChange(-1)}>-</Button>
-      <p className={styles.value}>{value}</p>
-      <Button onClick={() => handleNowValueChange(1)}>+</Button>
+      <Button onClick={(e) => handleNowValueChange(e, -1)}>-</Button>
+      <p className={styles.value}>{value}
+        <span className={styles.unit}>{unit}</span>
+        </p>
+      <Button onClick={(e) => handleNowValueChange(e, 1)}>+</Button>
     </div>
   );
 };
@@ -28,7 +39,7 @@ function Button({
   onClick,
 }: {
   children: React.ReactNode;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }) {
   return (
     <motion.button

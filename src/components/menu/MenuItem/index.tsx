@@ -125,7 +125,7 @@ const MenuItem = ({
                 <div className={styles.backDropToolContainer}>
                   <NumberCounter
                     value={value}
-                    onChange={(value) => setValue(value)}
+                    onChange={(_, value) => setValue(value)}
                   />
                   <div className={styles.backDropOptions}>
                     {menu.options?.map((option) => (

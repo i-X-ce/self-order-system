@@ -7,6 +7,8 @@
   border-radius: 500px;
   /* box-shadow: var(--shadow-regular); */
   padding: 10px;
+
+  color: var(--color-text);
 }
 
 .button {
@@ -30,4 +32,8 @@
   height: 100%;
   background-color: var(--color-text);
   border-radius: 100%;
+}
+
+.unit {
+  font-size: 1.1rem;
 }

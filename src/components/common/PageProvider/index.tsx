@@ -6,14 +6,14 @@ import React, {
   type SetStateAction,
 } from "react";
 
-export type PageType = "home" | "menu" | "checkout";
+export type PageType = "home" | "menu" | "checkout" | "checkin";
 const PageContext = createContext<{
   page: PageType;
   setPage: Dispatch<SetStateAction<PageType>>;
 } | null>(null);
 
 const PageProvider = ({ children }: { children: ReactNode }) => {
-  const [page, setPage] = React.useState<PageType>("home");
+  const [page, setPage] = React.useState<PageType>("checkin");
   return (
     <PageContext.Provider value={{ page, setPage }}>
       {children}

@@ -6,6 +6,7 @@ import CheckoutPage from "./pages/checkout";
 import MenuPage from "./pages/menu";
 import TopPage from "./pages/top";
 import NavBar from "./components/common/NavBar";
+import CheckinPage from "./pages/chckin";
 
 function App() {
   const pageContext = usePage();
@@ -26,6 +27,7 @@ function App() {
             {page === "home" && <TopPage key="home" />}
             {page === "menu" && <MenuPage key="menu" />}
             {page === "checkout" && <CheckoutPage key="checkout" />}
+            {page === "checkin" && <CheckinPage key="checkin" />}
           </AnimatePresence>
           <OrderButton />
         </div>
