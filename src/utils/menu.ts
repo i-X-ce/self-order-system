@@ -242,7 +242,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     name: "煎茶",
     description:
       "日本の伝統的なお茶である煎茶は、爽やかな渋みと香りが特徴。温かい煎茶は心を落ち着かせ、冷たい煎茶はスッキリとした後味が楽しめます。食事中やリラックスタイムにぴったりの一杯です。",
-    price: 370,
+    price: 500,
     category: "tea",
     options: teaOptions,
   },
@@ -313,7 +313,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     name: "ホットチョコパフェ",
     description:
       "温かいチョコレートソースをたっぷりとかけたホットチョコパフェは、冷たいアイスやフルーツとの温冷のコントラストが楽しめる贅沢なスイーツ。濃厚でリッチな味わいが口いっぱいに広がります。",
-    price: 580,
+    price: 1200,
     category: "sweets",
     options: sweetsOptions,
     isSeasonal: true,
@@ -351,10 +351,10 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     options: sweetsOptions,
   },
   chisato_special: {
-    name: "錦木千束スペシャル",
+    name: "エレガントパフェ",
     description:
-      "アニメ『リコリス・リコイル』のキャラクター、錦木千束をイメージしたオリジナルスイーツ。ピンクのストロベリームースとピスタチオのクリーム、ハート型のチョコレートをあしらったビジュアルも楽しい特別な一皿。",
-    price: 680,
+      "エレガントなパフェをイメージしたオリジナルスイーツ。ピンクのストロベリームースとピスタチオのクリーム、ハート型のチョコレートをあしらったビジュアルも楽しい特別な一皿。",
+    price: 1200,
     category: "sweets",
     options: sweetsOptions,
   },
@@ -404,7 +404,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     name: "どら焼きバーガー",
     description:
       "ふわっと焼き上げたどら焼きの生地に餡やホイップ、フルーツなどを挟んだ新感覚のスイーツ。見た目はまるでハンバーガーのようで、味は本格的な和菓子。食べやすく、ボリュームも満点です。",
-    price: 490,
+    price: 600,
     category: "sweets",
     options: sweetsOptions,
   },
@@ -417,10 +417,10 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     options: sweetsOptions,
   },
   sanshoku_dango: {
-    name: "三色団子",
+    name: "団子三兄弟",
     description:
       "ピンク、白、緑の三色団子は、見た目にも楽しく、やさしい甘さともちもち食感が楽しめる定番の和スイーツ。季節を問わず人気で、お花見やイベントにもぴったりの一品です。",
-    price: 310,
+    price: 500,
     category: "sweets",
     options: sweetsOptions,
   },
@@ -437,7 +437,7 @@ const MenuRecordRow: Record<MenuID, MenuType> = {
     name: "おはぎ",
     description:
       "もち米を使ったご飯に粒あんを包んだおはぎは、家庭の味としても親しまれる和スイーツ。甘すぎず、しっかりとした食べ応えがあり、お茶との相性も抜群。懐かしさを感じる素朴な美味しさです。",
-    price: 330,
+    price: 600,
     category: "sweets",
     options: sweetsOptions,
   },

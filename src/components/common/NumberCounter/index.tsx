@@ -1,4 +1,3 @@
-import type { ColorType } from "../../../utils/colorType";
 import styles from "./style.module.css";
 import { motion } from "motion/react";
 

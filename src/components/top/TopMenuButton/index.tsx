@@ -27,18 +27,24 @@ const TopMenuButton = ({
         setPage("menu");
       }}
       whileTap={{ scale: 0.95 }}
+      whileHover="hover"
       initial={{ right: "-300px", opacity: 0 }}
       animate={{ right: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100, damping: 10, delay }}
     >
-      <div
+      <motion.div
         className={styles.menuImg}
         style={{ backgroundImage: `url(${menuData.img})` }}
+        variants={{ hover: { scale: 1.1 } }}
       />
-      <div className={styles.texts}>
+      <motion.div
+        className={styles.texts}
+        variants={{ hover: { y: -80, opacity: 1 } }}
+        transition={{ type: "spring", stiffness: 1000, damping: 100 }}
+      >
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.subTitle}>{subTitle}</p>
-      </div>
+      </motion.div>
     </motion.button>
   );
 };
