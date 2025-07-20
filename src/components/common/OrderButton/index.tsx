@@ -4,7 +4,7 @@ import { usePage } from "../PageProvider";
 import styles from "./style.module.css";
 
 const OrderButton = () => {
-  const { orders, setOrders } = useOrder();
+  const { orders } = useOrder();
   const { page, setPage } = usePage();
 
   return (

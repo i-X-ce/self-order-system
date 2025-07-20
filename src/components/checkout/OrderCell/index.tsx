@@ -8,7 +8,6 @@ import ImgCircle from "../../common/ImgCircle";
 const OrderCell = ({
   data,
   index,
-  delay = 0,
 }: {
   data: OrderType;
   index: number;
